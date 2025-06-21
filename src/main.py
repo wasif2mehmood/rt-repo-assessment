@@ -191,6 +191,7 @@ if __name__ == "__main__":
         write_json_file(os.path.join(output_dir, "file_scores.json"), file_scores)
 
         generate_markdown_report(
+            project=project,
             assessment=results,
             output_file=os.path.join(output_dir, "report.md"),
             criteria_types=criteria_types,
