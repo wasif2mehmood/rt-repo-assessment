@@ -1,144 +1,347 @@
 [
     {
-        "scores": {},
-        "file_path": "C:\\Users\\A.C\\Documents\\GitHub\\rt-repo-assessment\\data\\inputs\\agentic-ai\\Module1-RAG_Assistant\\requirements.txt"
-    },
-    {
-        "scores": {},
-        "file_path": "C:\\Users\\A.C\\Documents\\GitHub\\rt-repo-assessment\\data\\inputs\\agentic-ai\\README.md"
-    },
-    {
-        "scores": {},
+        "scores": {
+            "env_variables": {
+                "score": 1,
+                "explanation": "The file references the use of an environment variable for the OpenAI API key, indicating proper handling of sensitive configurations."
+            },
+            "testing_comprehensive": {
+                "score": 0,
+                "explanation": "The file does not contain any testing code or references to a testing framework."
+            },
+            "code_style_tools": {
+                "score": 0,
+                "explanation": "There are no style checker configuration files mentioned in the file."
+            },
+            "code_style_consistency": {
+                "score": 1,
+                "explanation": "The file appears to have consistent formatting and indentation throughout."
+            },
+            "package_structure": {
+                "score": 0,
+                "explanation": "There is no indication of a proper package structure with init.py files."
+            },
+            "pinned_dependencies": {
+                "score": 0,
+                "explanation": "The file does not specify versions for dependencies in a requirements.txt or similar file."
+            },
+            "copyright_notice_mentioned": {
+                "score": 1,
+                "explanation": "The file includes a license section indicating the use of the MIT license."
+            },
+            "environment_dependency_information": {
+                "score": 1,
+                "explanation": "The setup instructions specify the use of a requirements.txt file for dependency management."
+            },
+            "key_parameters_explained": {
+                "score": 0,
+                "explanation": "The file does not document key modeling parameters or considerations."
+            }
+        },
         "file_path": "C:\\Users\\A.C\\Documents\\GitHub\\rt-repo-assessment\\data\\inputs\\agentic-ai\\Module1-RAG_Assistant\\README.md"
     },
     {
         "scores": {
-            "rag_implementation": {
+            "env_variables": {
                 "score": 0,
-                "explanation": "The code does not implement a Retrieval-Augmented Generation (RAG) architecture as it lacks both a retrieval mechanism that integrates with a language model for generating responses."
+                "explanation": "The file does not reference any environment variables such as os.getenv() or load_dotenv()."
             },
-            "project_scope_implementation": {
+            "testing_comprehensive": {
                 "score": 0,
-                "explanation": "The code does not define a specific project scope for a RAG assistant, nor does it handle specific document domains or query types."
+                "explanation": "The file does not contain any testing code."
             },
-            "prompt_engineering_implementation": {
+            "code_style_tools": {
                 "score": 0,
-                "explanation": "There is no implementation of prompt engineering techniques, such as prompt templates or context integration from retrieved documents."
+                "explanation": "The file does not contain any style checker configuration files."
             },
-            "document_ingestion_code": {
-                "score": 1,
-                "explanation": "The code implements document ingestion by fetching content from URLs and saving it to files, including text cleaning."
-            },
-            "text_chunking_implementation": {
+            "code_style_consistency": {
                 "score": 0,
-                "explanation": "There is no implementation of text chunking with configurable parameters for chunk size or overlap."
+                "explanation": "The file does not provide evidence of consistent indentation and formatting."
             },
-            "chunk_overlap_implementation": {
+            "package_structure": {
                 "score": 0,
-                "explanation": "The code does not implement any chunk overlap strategies."
+                "explanation": "The file does not have a proper package structure with init.py files."
             },
-            "embedding_model_code": {
+            "pinned_dependencies": {
                 "score": 0,
-                "explanation": "There is no code related to embedding model selection or configuration."
+                "explanation": "The file does not specify versions for dependencies, which is necessary for reproducibility."
             },
-            "vector_store_implementation": {
+            "dependency_groups": {
                 "score": 0,
-                "explanation": "The code does not implement any vector storage solution for document retrieval."
+                "explanation": "The file does not organize dependencies into logical groups."
             },
-            "similarity_search_code": {
+            "copyright_notice_mentioned": {
                 "score": 0,
-                "explanation": "There is no implementation of similarity search mechanisms for document retrieval."
+                "explanation": "The file does not include explicit copyright statements."
             },
-            "query_processing_code": {
+            "environment_dependency_information": {
                 "score": 0,
-                "explanation": "The code does not include any query processing or optimization techniques."
+                "explanation": "The file does not specify required Python version or dependency management."
             },
-            "retrieval_evaluation_code": {
+            "key_parameters_explained": {
                 "score": 0,
-                "explanation": "There is no implementation of retrieval performance measurement or evaluation."
-            },
-            "model_selection_code": {
-                "score": 0,
-                "explanation": "The code does not include any language model selection or configuration."
-            },
-            "rag_pipeline_integration": {
-                "score": 0,
-                "explanation": "There is no integration of retrieval and generation components in a cohesive pipeline."
-            },
-            "rag_config_management": {
-                "score": 0,
-                "explanation": "There is no centralized configuration management for RAG-specific parameters."
-            },
-            "rag_environment_variables": {
-                "score": 0,
-                "explanation": "The code does not utilize environment variables for sensitive configurations."
+                "explanation": "The file does not document key modeling parameters."
             }
         },
-        "file_path": "C:\\Users\\A.C\\Documents\\GitHub\\rt-repo-assessment\\data\\inputs\\agentic-ai\\Module1-RAG_Assistant\\download_and_prepare_docs.py"
+        "file_path": "C:\\Users\\A.C\\Documents\\GitHub\\rt-repo-assessment\\data\\inputs\\agentic-ai\\Module1-RAG_Assistant\\requirements.txt"
     },
     {
         "scores": {
-            "rag_implementation": {
-                "score": 1,
-                "explanation": "The code implements a Retrieval-Augmented Generation (RAG) architecture by integrating document retrieval using FAISS and generating responses using OpenAI's language model."
-            },
-            "project_scope_implementation": {
-                "score": 1,
-                "explanation": "The code clearly defines a specific document domain (text files in the 'docs' directory) and implements a RAG assistant that answers questions based on the retrieved documents."
-            },
-            "prompt_engineering_implementation": {
-                "score": 1,
-                "explanation": "The code includes a prompt template that integrates context from retrieved documents to generate answers, demonstrating effective prompt engineering."
-            },
-            "document_ingestion_code": {
-                "score": 1,
-                "explanation": "The code handles document loading, chunking, and embedding, preparing the documents for storage in the vector database."
-            },
-            "text_chunking_implementation": {
-                "score": 1,
-                "explanation": "The code implements text chunking using the RecursiveCharacterTextSplitter with configurable chunk size and overlap parameters."
-            },
-            "chunk_overlap_implementation": {
-                "score": 1,
-                "explanation": "The code specifies a chunk overlap parameter (CHUNK_OVERLAP) to maintain context continuity during text chunking."
-            },
-            "embedding_model_code": {
-                "score": 1,
-                "explanation": "The code initializes and uses the OpenAIEmbeddings model for both document and query embeddings."
-            },
-            "vector_store_implementation": {
-                "score": 1,
-                "explanation": "The code implements a vector storage solution using FAISS for storing and retrieving document embeddings."
-            },
-            "similarity_search_code": {
-                "score": 1,
-                "explanation": "The FAISS library is used for similarity search, allowing for efficient retrieval of relevant documents based on embeddings."
-            },
-            "query_processing_code": {
+            "env_variables": {
                 "score": 0,
-                "explanation": "The code does not explicitly show query preprocessing or optimization techniques."
+                "explanation": "The file does not reference any environment variables."
             },
-            "retrieval_evaluation_code": {
+            "testing_comprehensive": {
                 "score": 0,
-                "explanation": "There is no implementation of retrieval performance measurement or evaluation metrics in the provided code."
+                "explanation": "The file does not contain any testing code."
             },
-            "model_selection_code": {
-                "score": 1,
-                "explanation": "The code initializes the OpenAI language model with specific parameters, demonstrating model selection and configuration."
+            "code_style_tools": {
+                "score": 0,
+                "explanation": "The file does not contain any style checker configuration files."
             },
-            "rag_pipeline_integration": {
+            "code_style_consistency": {
                 "score": 1,
-                "explanation": "The code integrates the retrieval and generation components into a cohesive pipeline, allowing for end-to-end processing of user queries."
+                "explanation": "The file does not contain any code, thus consistent indentation and formatting cannot be assessed."
             },
-            "rag_config_management": {
-                "score": 1,
-                "explanation": "The code includes centralized configuration for RAG-specific parameters such as chunk sizes and vector store paths."
+            "package_structure": {
+                "score": 0,
+                "explanation": "The file does not contain a proper package structure."
             },
-            "rag_environment_variables": {
+            "pinned_dependencies": {
+                "score": 0,
+                "explanation": "The file does not specify any dependencies."
+            },
+            "copyright_notice_mentioned": {
+                "score": 0,
+                "explanation": "The file does not include any copyright statements."
+            },
+            "environment_dependency_information": {
+                "score": 0,
+                "explanation": "The file does not specify any required Python version or dependency management."
+            },
+            "key_parameters_explained": {
+                "score": 0,
+                "explanation": "The file does not document any key modeling parameters."
+            }
+        },
+        "file_path": "C:\\Users\\A.C\\Documents\\GitHub\\rt-repo-assessment\\data\\inputs\\agentic-ai\\README.md"
+    },
+    {
+        "scores": {
+            "functions_and_classes": {
                 "score": 1,
-                "explanation": "The code uses the dotenv library to load environment variables for sensitive configurations like API keys."
+                "explanation": "The file contains functions, but they are well-organized and do not exceed the defined limit."
+            },
+            "function_length": {
+                "score": 1,
+                "explanation": "All functions in the file are reasonably sized and do not exceed 100 lines."
+            },
+            "code_duplication": {
+                "score": 1,
+                "explanation": "There is no evidence of code duplication in the provided code."
+            },
+            "centralized_config": {
+                "score": 0,
+                "explanation": "There are no dedicated configuration files present in the code."
+            },
+            "no_hardcoded_constants": {
+                "score": 1,
+                "explanation": "No hardcoded constants are present; fixed values are stored in variables."
+            },
+            "env_variables": {
+                "score": 1,
+                "explanation": "The code uses 'load_dotenv()' to load environment variables."
+            },
+            "logging_basic": {
+                "score": 0,
+                "explanation": "There is no evidence of logging library usage in the code."
+            },
+            "logging_advanced": {
+                "score": 0,
+                "explanation": "There is no logging configuration present in the code."
+            },
+            "error_handling_basic": {
+                "score": 1,
+                "explanation": "The script is guaranteed to not raise exceptions as it does not perform any operations that could fail."
+            },
+            "error_handling_advanced": {
+                "score": 0,
+                "explanation": "There are no custom exception classes defined in the code."
+            },
+            "testing_comprehensive": {
+                "score": 0,
+                "explanation": "There is no test coverage metrics available in the provided code."
+            },
+            "testing_framework": {
+                "score": 0,
+                "explanation": "The file does not contain any testing code or evidence of a testing framework."
+            },
+            "uses_docstrings": {
+                "score": 1,
+                "explanation": "All functions in the file have docstrings."
+            },
+            "complete_docstrings": {
+                "score": 1,
+                "explanation": "All docstrings include parameters and return sections."
+            },
+            "type_hints": {
+                "score": 0,
+                "explanation": "There are no type hints present in the function signatures."
+            },
+            "code_style_tools": {
+                "score": 0,
+                "explanation": "There are no style checker configuration files present."
+            },
+            "code_style_consistency": {
+                "score": 1,
+                "explanation": "The code shows evidence of consistent indentation and formatting."
+            },
+            "class_size": {
+                "score": 1,
+                "explanation": "There are no classes in the file, so this criterion is satisfied."
+            },
+            "seed_setting": {
+                "score": 1,
+                "explanation": "The script is deterministic and does not require random seed setting."
+            },
+            "data_quality_checks": {
+                "score": 1,
+                "explanation": "Input data validation logic is present in the form of document loading."
+            },
+            "model_organization": {
+                "score": 1,
+                "explanation": "ML models are organized in dedicated functions."
+            },
+            "package_structure": {
+                "score": 0,
+                "explanation": "There is no evidence of a proper package structure with init.py files."
+            },
+            "pinned_dependencies": {
+                "score": 0,
+                "explanation": "There are no specific versions of dependencies pinned in the code."
+            },
+            "dependency_groups": {
+                "score": 0,
+                "explanation": "Dependencies are not organized into logical groups."
+            },
+            "environment_dependency_information": {
+                "score": 0,
+                "explanation": "There is no specification of required Python version or dependency management."
+            },
+            "key_parameters_explained": {
+                "score": 0,
+                "explanation": "There is no documentation of key modeling parameters and considerations."
             }
         },
         "file_path": "C:\\Users\\A.C\\Documents\\GitHub\\rt-repo-assessment\\data\\inputs\\agentic-ai\\Module1-RAG_Assistant\\rag_assistant.py"
+    },
+    {
+        "scores": {
+            "functions_and_classes": {
+                "score": 1,
+                "explanation": "The file contains functions, but they are all within acceptable length limits."
+            },
+            "function_length": {
+                "score": 1,
+                "explanation": "The file contains functions, but they are all within acceptable length limits."
+            },
+            "code_duplication": {
+                "score": 1,
+                "explanation": "There is no evidence of code duplication in the provided code."
+            },
+            "centralized_config": {
+                "score": 0,
+                "explanation": "There are no dedicated configuration files present in the code."
+            },
+            "no_hardcoded_constants": {
+                "score": 1,
+                "explanation": "The constants defined are not hardcoded values that violate the criterion."
+            },
+            "env_variables": {
+                "score": 0,
+                "explanation": "There are no references to environment variables in the code."
+            },
+            "logging_basic": {
+                "score": 0,
+                "explanation": "There is no evidence of logging library usage in the code."
+            },
+            "logging_advanced": {
+                "score": 0,
+                "explanation": "There is no logging configuration present in the code."
+            },
+            "error_handling_basic": {
+                "score": 1,
+                "explanation": "The script is guaranteed to not raise exceptions as it handles errors within the fetch_and_save function."
+            },
+            "error_handling_advanced": {
+                "score": 0,
+                "explanation": "There are no custom exception classes defined in the code."
+            },
+            "testing_comprehensive": {
+                "score": 0,
+                "explanation": "There is no test coverage or testing metrics available in the provided code."
+            },
+            "testing_framework": {
+                "score": 0,
+                "explanation": "The file does not contain any testing code or evidence of a testing framework."
+            },
+            "uses_docstrings": {
+                "score": 1,
+                "explanation": "The file does not contain functions or classes, thus satisfying the criterion."
+            },
+            "complete_docstrings": {
+                "score": 1,
+                "explanation": "The file does not contain functions or classes, thus satisfying the criterion."
+            },
+            "type_hints": {
+                "score": 1,
+                "explanation": "The file does not contain functions or classes, thus satisfying the criterion."
+            },
+            "code_style_tools": {
+                "score": 0,
+                "explanation": "There are no style checker configuration files present in the code."
+            },
+            "code_style_consistency": {
+                "score": 1,
+                "explanation": "The code appears to have consistent indentation and formatting."
+            },
+            "class_size": {
+                "score": 1,
+                "explanation": "The file does not contain classes, thus satisfying the criterion."
+            },
+            "seed_setting": {
+                "score": 1,
+                "explanation": "The script is deterministic and does not involve random sampling."
+            },
+            "data_quality_checks": {
+                "score": 0,
+                "explanation": "There is no input data validation logic present in the code."
+            },
+            "model_organization": {
+                "score": 0,
+                "explanation": "There are no ML models organized in dedicated modules or classes."
+            },
+            "package_structure": {
+                "score": 0,
+                "explanation": "There is no evidence of a proper package structure with init.py files."
+            },
+            "pinned_dependencies": {
+                "score": 0,
+                "explanation": "There are no dependencies specified with versions for reproducibility."
+            },
+            "dependency_groups": {
+                "score": 0,
+                "explanation": "Dependencies are not organized into logical groups in the code."
+            },
+            "environment_dependency_information": {
+                "score": 0,
+                "explanation": "There is no specification of required Python version or dependency management."
+            },
+            "key_parameters_explained": {
+                "score": 0,
+                "explanation": "There is no documentation of key modeling parameters and considerations."
+            }
+        },
+        "file_path": "C:\\Users\\A.C\\Documents\\GitHub\\rt-repo-assessment\\data\\inputs\\agentic-ai\\Module1-RAG_Assistant\\download_and_prepare_docs.py"
     }
 ]
