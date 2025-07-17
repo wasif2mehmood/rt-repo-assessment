@@ -20,6 +20,9 @@ PROMPTS_FPATH = os.path.join(CONFIG_DIR, "prompts.yaml")
 
 CODE_QUALITY_CRITERIA_FPATH = os.path.join(SCORING_DIR, "code_quality_criteria.yaml")
 
+AGENT_CODE_QUALITY_CRITERIA_FPATH = os.path.join(SCORING_DIR, "module2.yaml")
+
+
 DEPENDANCIES_CRITERIA_FPATH = os.path.join(SCORING_DIR, "dependancies_criteria.yaml")
 
 LICENSE_CRITERIA_FPATH = os.path.join(SCORING_DIR, "license_criteria.yaml")

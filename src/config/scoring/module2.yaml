@@ -1,0 +1,210 @@
+Multi-Agent Systems:
+  Agent Requirements:
+    minimum_agent_count_requirement:
+      name: Minimum Three Agents Implementation
+      description: Specifically validates that the multi-agent system implements exactly 3 or more distinct agents as required by the project guidelines
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      - .ipynb
+      - .md
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Must explicitly count and identify at least 3 separate agent entities with individual names, roles, or identifiers.
+        This is a strict requirement criterion that ensures compliance with the minimum agent count specification.
+        Look for explicit mentions of 3, 4, 5 or more agents, names or identifiers for each agent, numerical agent counts, or multiple distinct agent instances.
+        Check code files for agent class definitions, initialization, or configuration.
+    
+    agent_role_specialization:
+      name: Agent Role Specialization and Design
+      description: Each agent has clearly defined, specialized roles that contribute to the overall system functionality
+      essential: false
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      - .ipynb
+      - .md
+      aggregation: AND
+      based_on: file_content
+      instructions: |
+        Must demonstrate that agents have distinct capabilities and responsibilities rather than duplicate functionality.
+        Should document the specific role and expertise of each agent.
+        Look for specific role definitions, agent expertise areas, complementary capabilities, and explanations of why each agent is needed.
+        Check for agent class definitions with different methods, specialized prompts, or role-specific configurations.
+
+  Framework Integration:
+    orchestration_framework_usage:
+      name: Orchestration Framework Implementation
+      description: Usage of an orchestration framework like LangGraph, CrewAI, AutoGen, or similar for agent coordination
+      essential: false
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      - .ipynb
+      - .md
+      - .txt
+      - requirements.txt
+      - pyproject.toml
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Must name the specific framework used and explain how it coordinates agent interactions and workflow management.
+        Should document the orchestration approach and framework configuration.
+        Look for named frameworks (LangGraph, CrewAI, AutoGen, etc.), framework configuration, workflow orchestration, and agent coordination through framework.
+        Check imports, dependencies, and framework-specific code patterns.
+
+    tool_integration_implementation:
+      name: Tool Integration and Usage
+      description: Integration of at least 3 different tools that extend capabilities beyond basic LLM responses
+      essential: false
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      - .ipynb
+      - .md
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Must show tools like web search, math calculations, file processing, API calls, or custom implementations.
+        Should document which tools are used and how they enhance system capabilities.
+        Look for 3 or more specific tools, web search/calculations/file processing/API integration, tool usage extending LLM capabilities, and tool configuration documentation.
+        Check for tool imports, API integrations, external service calls, or custom tool implementations.
+
+  Communication and Coordination:
+    agent_communication_coordination:
+      name: Agent Communication and Coordination
+      description: Implementation of communication mechanisms between agents in the multi-agent system
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      - .ipynb
+      - .md
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Must demonstrate how agents share information, coordinate tasks, and pass results between each other.
+        Should document the communication protocols and coordination strategies used.
+        Look for message passing between agents, shared state or memory, coordination protocols, and information flow documentation.
+        Check for inter-agent method calls, shared data structures, message queues, or communication patterns in code.
+
+    workflow_orchestration:
+      name: Workflow Orchestration and Task Management
+      description: Implementation of workflow management and task orchestration across the multi-agent system
+      essential: false
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      - .ipynb
+      - .md
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Must demonstrate how tasks are distributed, managed, and coordinated among agents to achieve system goals.
+        Should document the workflow patterns and task management strategies.
+        Look for task distribution among agents, workflow coordination, task management approaches, and execution flow documentation.
+        Check for workflow definitions, task queues, coordination logic, or orchestration patterns in code.
+
+  System Design:
+    project_scope_definition:
+      name: Multi-Agent Project Scope Definition
+      description: Clear definition of the specific problem being solved by the multi-agent system
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .md
+      - .py
+      - .ipynb
+      - .txt
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Must specify the use case, problem domain, and intended functionality of the multi-agent system.
+        Should indicate what tasks the system performs and why multiple agents are needed for the solution.
+        Look for specific problem statements, defined use cases and domains, justification for multi-agent approach, and system capabilities description.
+        Check README files, documentation, and code comments for project purpose and scope.
+
+    system_architecture_explanation:
+      name: Multi-Agent System Architecture
+      description: Explanation of the overall system architecture and how components interact within the multi-agent framework
+      essential: false
+      professional: true
+      elite: true
+      include_extensions:
+      - .md
+      - .py
+      - .ipynb
+      - .txt
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Must document the system design, agent roles, and workflow patterns used in the implementation.
+        Should explain how the multi-agent system is structured and organized.
+        Look for system design diagrams or descriptions, agent roles and responsibilities, workflow patterns, and component relationships.
+        Check for architecture documentation, class diagrams, system flow descriptions, or architectural comments in code.
+
+    scalability_considerations:
+      name: Scalability and Modularity Design
+      description: Addresses scalability and modularity considerations in the multi-agent system design
+      essential: false
+      professional: false
+      elite: true
+      include_extensions:
+      - .py
+      - .ipynb
+      - .md
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Must demonstrate modular design principles and consideration for system growth or adaptation.
+        Should document how the system can be extended or scaled.
+        Look for modular agent design, extensible architecture, scaling considerations, and system flexibility documentation.
+        Check for modular code structure, configuration-based scaling, plugin architectures, or extensibility patterns.
+
+  Quality and Resilience:
+    performance_evaluation:
+      name: System Performance Evaluation
+      description: Includes evaluation of the multi-agent system's performance and effectiveness
+      essential: false
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      - .ipynb
+      - .md
+      - .txt
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Must demonstrate testing approaches, performance metrics, or comparison with baseline systems or alternative approaches.
+        Should document evaluation methodology and results.
+        Look for performance metrics or benchmarks, system testing approaches, comparisons with alternatives, and evaluation results.
+        Check for benchmark scripts, performance tests, evaluation notebooks, or results documentation.
+
+  Human Integration:
+    human_in_the_loop_integration:
+      name: Human-in-the-Loop Integration
+      description: Implementation of human-in-the-loop interactions within the multi-agent system
+      essential: false
+      professional: false
+      elite: true
+      include_extensions:
+      - .py
+      - .ipynb
+      - .md
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Must demonstrate user interaction points, feedback mechanisms, or human oversight capabilities in the agent workflow.
+        Should document how humans can interact with or guide the agent system.
+        Look for user interaction interfaces, human feedback integration, approval or oversight mechanisms, and human guidance capabilities.
+        Check for UI code, input prompts, approval workflows, or human feedback loops in the implementation.

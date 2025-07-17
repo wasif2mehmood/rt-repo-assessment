@@ -30,7 +30,7 @@ def write_yaml_file(file_path: str, data: Union[Dict, List]):
 
 def read_json_file(file_path: str) -> Union[Dict, List]:
     """Read a JSON file and return its content."""
-    with open(file_path, "r") as file:
+    with open(file_path, 'r', encoding='utf-8') as file:
         return json.load(file)
 
 

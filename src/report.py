@@ -6,13 +6,14 @@ from logger import get_logger
 logger = get_logger(__name__)
 
 
-def save_to_results_csv(project: str, assessment: Dict[str, Any], category_stats: Dict[str, Dict] = None):
+def save_to_results_csv(project: str, assessment: Dict[str, Any], publication_external_id: str, category_stats: Dict[str, Dict] = None):
     """
     Save assessment results to a single CSV file in real-time.
     
     Args:
         project: Name of the project being assessed
         assessment: Dictionary containing assessment results with criteria IDs as keys
+        publication_external_id: External publication ID for the project
         category_stats: Optional dictionary containing category statistics
     """
     csv_file = "data/outputs/results.csv"
@@ -36,7 +37,7 @@ def save_to_results_csv(project: str, assessment: Dict[str, Any], category_stats
         
         # Write header if file doesn't exist
         if not file_exists:
-            headers = ['project', 'total_criteria', 'met_criteria', 'percentage', 'timestamp']
+            headers = ['project', 'publication_external_id', 'total_criteria', 'met_criteria', 'percentage', 'timestamp']
             if category_stats:
                 headers.extend(['essential_met', 'essential_total', 'essential_percentage',
                                'professional_met', 'professional_total', 'professional_percentage',
@@ -46,7 +47,7 @@ def save_to_results_csv(project: str, assessment: Dict[str, Any], category_stats
         # Write project results
         from datetime import datetime
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        row = [project, total_criteria, met_criteria, percentage, timestamp]
+        row = [project, publication_external_id, total_criteria, met_criteria, percentage, timestamp]
         
         if category_stats:
             for category in ['Essential', 'Professional', 'Elite']:
@@ -58,13 +59,69 @@ def save_to_results_csv(project: str, assessment: Dict[str, Any], category_stats
     logger.info(f"Results saved to {csv_file}")
 
 
+def save_detailed_scores_csv(project: str, assessment: Dict[str, Any], publication_external_id: str, 
+                           criteria_names: Dict[str, str], category_criteria: Dict[str, List[str]]):
+    """
+    Save detailed scores with explanations to a separate CSV file.
+    
+    Args:
+        project: Name of the project being assessed
+        assessment: Dictionary containing assessment results with criteria IDs as keys
+        publication_external_id: External publication ID for the project
+        criteria_names: Dictionary mapping criteria IDs to their display names
+        category_criteria: Dictionary mapping category names to lists of criteria IDs
+    """
+    csv_file = "data/outputs/detailed_scores.csv"
+    
+    # Create output directory if it doesn't exist
+    output_dir = os.path.dirname(csv_file)
+    if output_dir and not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    
+    # Check if file exists to determine if we need to write headers
+    file_exists = os.path.exists(csv_file)
+    
+    # Append detailed results to CSV
+    with open(csv_file, 'a', newline='', encoding='utf-8') as csvfile:
+        writer = csv.writer(csvfile)
+        
+        # Write header if file doesn't exist
+        if not file_exists:
+            headers = ['project', 'publication_external_id', 'criterion_id', 'criterion_name', 
+                      'category', 'score', 'explanation', 'timestamp']
+            writer.writerow(headers)
+        
+        # Write detailed results for each criterion
+        from datetime import datetime
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        
+        for criterion_id, result in assessment.items():
+            # Find which category this criterion belongs to
+            criterion_category = None
+            for cat, criteria in category_criteria.items():
+                if criterion_id in criteria:
+                    criterion_category = cat
+                    break
+            
+            score = result.get("score", 0)
+            explanation = result.get("explanation", "No explanation provided")
+            criterion_name = criteria_names.get(criterion_id, criterion_id)
+            
+            row = [project, publication_external_id, criterion_id, criterion_name, 
+                   criterion_category, score, explanation, timestamp]
+            writer.writerow(row)
+    
+    logger.info(f"Detailed scores saved to {csv_file}")
+
+
 def generate_markdown_report(
-        project: str,
+    project: str,
     assessment: Dict[str, Any],
     output_file: str,
     criteria_types: Dict[str, List[str]],
     criteria_names: Dict[str, str],
     category_criteria: Dict[str, List[str]],
+    publication_external_id: str 
 ):
     """
     Generate a Markdown report summarizing criteria satisfaction.
@@ -76,6 +133,7 @@ def generate_markdown_report(
         criteria_types: Dictionary mapping category names to lists of criteria IDs
         criteria_names: Dictionary mapping criteria IDs to their display names
         category_criteria: Dictionary mapping category names to lists of criteria IDs
+        publication_external_id: External publication ID for the project
     """
     
     total_criteria = len(assessment)
@@ -129,7 +187,10 @@ def generate_markdown_report(
         }
 
     # Save to results CSV with category stats
-    save_to_results_csv(project, assessment, category_stats)
+    save_to_results_csv(project, assessment, publication_external_id, category_stats)
+    
+    # Save detailed scores with explanations
+    save_detailed_scores_csv(project, assessment, publication_external_id, criteria_names, category_criteria)
 
     # Create output directory if it doesn't exist
     output_dir = os.path.dirname(output_file)

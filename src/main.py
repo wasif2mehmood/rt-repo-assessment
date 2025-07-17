@@ -42,6 +42,18 @@ criteria_args = get_criteria_args()
 logger = get_logger(__name__)
 
 
+def load_aaidc_data(file_path: str) -> Dict[str, str]:
+    """Load URLs and publication IDs from aaidc2025.json"""
+    data = read_json_file(file_path)
+    url_to_pub_id = {}
+    
+    for entry in data:
+        if 'url' in entry and 'publication_external_id' in entry:
+            url_to_pub_id[entry['url']] = entry['publication_external_id']
+    
+    return url_to_pub_id
+
+
 def download_project(repo_url: str) -> str:
     repo_dir_name = os.path.basename(repo_url)
     repo_dir_path = os.path.join(paths.INPUTS_DIR, repo_dir_name)
@@ -101,21 +113,26 @@ if __name__ == "__main__":
 
     prompt_template = prompts["scoring_v0"]
 
-    repo_urls = config["urls"]
     max_workers = config["max_workers"]
-
     from_inputs_directory = config["from_inputs_directory"]
 
+    # Load AAIDC data
+    aaidc_file_path = os.path.join("data", "module-2-submissions.json")
+    url_to_pub_id = load_aaidc_data(aaidc_file_path)
+    
     if from_inputs_directory:
         project_name = config["project_name"]
         project_path = os.path.join(paths.INPUTS_DIR, project_name)
         if not os.path.exists(project_path):
             raise NotADirectoryError(f"Project directory {project_path} does not exist")
-        projects = [project_name]
+        projects = [(project_name, None)]  # No publication ID for local projects
     else:
-        projects = repo_urls
+        # Use URLs from aaidc2025.json instead of config
+        projects = [(url, pub_id) for url, pub_id in url_to_pub_id.items()]
 
-    for project in projects:
+    for project_info in projects:
+        project, publication_id = project_info
+        
         if not from_inputs_directory:
             project_path = download_project(project)
         else:
@@ -197,4 +214,5 @@ if __name__ == "__main__":
             criteria_types=criteria_types,
             criteria_names=get_criteria_names(),
             category_criteria=get_category_criteria(),
+            publication_external_id=publication_id,
         )
