@@ -1,0 +1,376 @@
+AAIDC Module 3 Repository Evaluation:
+  Production Readiness:
+    deployment_configuration:
+      name: Deployment Configuration
+      description: Presence of deployment files (Docker, requirements.txt, environment setup)
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .txt
+      - .yml
+      - .yaml
+      - .dockerfile
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for requirements.txt, environment.yml, Dockerfile, setup.py, or pyproject.toml files.
+        Also check for deployment scripts or configuration files.
+
+    application_entry_point:
+      name: Application Entry Point
+      description: Clear main application file or entry point (app.py, main.py, etc.)
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for main application files like app.py, main.py, or files that contain application startup code.
+
+  Testing Suite:
+    test_file_presence:
+      name: Test File Presence
+      description: Comprehensive test files covering unit, integration, and end-to-end tests
+      essential: true
+      professional: true
+      elite: true
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for test files with naming patterns like test_*.py, *_test.py, or tests/ directory structure.
+    
+    test_framework_usage:
+      name: Test Framework Implementation
+      description: Evidence of testing frameworks (pytest, unittest) with proper test structure
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for imports of testing frameworks and actual test function implementations.
+    
+    test_coverage_config:
+      name: Test Coverage Configuration
+      description: Test coverage configuration and reporting setup
+      essential: false
+      professional: true
+      elite: true
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for coverage configuration files (.coveragerc, pytest.ini) or coverage reporting in CI/CD.
+    
+    agent_communication_tests:
+      name: Multi-Agent Integration Tests
+      description: Tests specifically for agent-to-agent communication and workflows
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for test functions that test agent interactions, multi-agent workflows, or end-to-end system behavior.
+
+  Security and Safety:
+    input_validation:
+      name: Input Validation Implementation
+      description: Code that validates and sanitizes user inputs
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for input validation functions, sanitization code, or validation libraries usage.
+    
+    guardrails_implementation:
+      name: Safety Guardrails
+      description: Implementation of content filtering and safety mechanisms
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for content filtering, output validation, or safety check implementations.
+    
+    error_handling_comprehensive:
+      name: Comprehensive Error Handling
+      description: Robust error handling with graceful degradation
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: AND
+      based_on: file_content
+      instructions: |
+        Look for try-except blocks, custom exception handling, and graceful failure mechanisms.
+    
+  User Interface:
+    ui_framework_implementation:
+      name: UI Framework Usage
+      description: Implementation using Gradio, Streamlit, or similar web framework
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for imports and usage of UI frameworks like Gradio, Streamlit, Flask, FastAPI, etc.
+    
+    user_experience_design:
+      name: User Experience Implementation
+      description: Code that provides clear user guidance and intuitive interface
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for user-friendly error messages, help text, validation feedback, or UI components.
+    
+
+  Resilience and Monitoring:
+    retry_logic:
+      name: Retry Mechanism Implementation
+      description: Retry logic with exponential backoff for failed operations
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for retry decorators, backoff strategies, or retry loop implementations.
+    
+    timeout_handling:
+      name: Timeout Management
+      description: Timeout handling to prevent stalled workflows
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for timeout configurations, async timeout handling, or time-based operation limits.
+    
+    monitoring_logging:
+      name: Monitoring and Logging
+      description: Comprehensive logging for debugging and operational monitoring
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for structured logging, monitoring metrics, or operational observability code.
+    
+    graceful_degradation:
+      name: Graceful Failure Handling
+      description: System continues to function partially when components fail
+      essential: false
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for fallback mechanisms, circuit breakers, or partial functionality preservation.
+
+  Documentation:
+    api_documentation:
+      name: API/Interface Documentation
+      description: Clear documentation of system interfaces and expected inputs/outputs
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .md
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for API documentation, interface specifications, or well-documented function signatures.
+    
+    architecture_documentation:
+      name: System Architecture Documentation
+      description: High-level system overview and architecture documentation
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .md
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for architecture diagrams, system overview documentation, or design decisions.
+    
+    troubleshooting_guide:
+      name: Troubleshooting and Maintenance Guide
+      description: Documentation for common issues, debugging, and maintenance
+      essential: false
+      professional: true
+      elite: true
+      include_extensions:
+      - .md
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for troubleshooting sections, FAQ, or maintenance documentation.
+
+  Multi-Agent Specific:
+    agent_architecture:
+      name: Multi-Agent Architecture
+      description: Clear separation and organization of different agents
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for modular agent implementations, agent factories, or clear agent separation.
+    
+    agent_communication:
+      name: Agent Communication Protocol
+      description: Well-defined communication patterns between agents
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for message passing, event systems, or structured agent communication patterns.
+    
+    workflow_orchestration:
+      name: Workflow Orchestration
+      description: Clear orchestration and coordination of multi-agent workflows
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for workflow managers, task coordinators, or orchestration logic.
+    
+    agent_state_management:
+      name: Agent State Management
+      description: Proper management of agent states and context
+      essential: false
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for state management, context preservation, or agent memory implementations.
+
+  Code Quality:
+    production_code_standards:
+      name: Production Code Standards
+      description: Code follows production standards with proper structure and documentation
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: AND
+      based_on: file_content
+      instructions: |
+        Evaluate overall code quality, structure, and adherence to production standards.
+    
+    configuration_management:
+      name: Configuration Management
+      description: Proper separation of configuration from code
+      essential: true
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      - .json
+      - .yaml
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for configuration files, settings modules, or externalized configuration.
+    
+    dependency_management:
+      name: Dependency Management
+      description: Clear dependency specification and management
+      essential: true
+      professional: true
+      elite: true
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for requirements.txt, pyproject.toml, or other dependency specification files.
+
+  Operational Excellence:
+    health_checks:
+      name: Health Check Implementation
+      description: System health monitoring and status endpoints
+      essential: false
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for health check endpoints, system status monitoring, or diagnostic functions.
+    
+    performance_considerations:
+      name: Performance Optimization
+      description: Evidence of performance considerations and optimizations
+      essential: false
+      professional: true
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for caching, async operations, connection pooling, or other performance optimizations.
+    
+    scalability_design:
+      name: Scalability Design
+      description: Code structure that supports scaling and extensibility
+      essential: false
+      professional: false
+      elite: true
+      include_extensions:
+      - .py
+      aggregation: OR
+      based_on: file_content
+      instructions: |
+        Look for modular design, plugin architectures, or scalable patterns.

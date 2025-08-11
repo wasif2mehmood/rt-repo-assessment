@@ -94,17 +94,6 @@ Code Quality:
       - .ipynb
       aggregation: OR
       based_on: file_content
-    logging_advanced:
-      name: Logging Configuration
-      description: Presence of logging configuration (levels, formats)
-      essential: false
-      professional: false
-      elite: true
-      include_extensions:
-      - .py
-      - .ipynb
-      aggregation: OR
-      based_on: file_content
   Error Handling:
     error_handling_basic:
       name: Exception Usage
@@ -122,19 +111,6 @@ Code Quality:
        For example, a file that only contains print statements should be scored 1.
        A file that only cntains constant variables should be scored 1.
 
-    error_handling_advanced:
-      name: Custom Exception Classes
-      description: Definition of project-specific exception classes
-      essential: false
-      professional: false
-      elite: true
-      include_extensions:
-      - .py
-      - .ipynb
-      aggregation: OR
-      based_on: file_content
-      instructions: |
-       Look for any custom exception classes that are defined in the codebase. If one is found, the criterion is satisfied.
   Testing:
     testing_basic:
       name: Test File Presence
@@ -142,15 +118,6 @@ Code Quality:
       essential: false
       professional: true
       elite: true
-
-    testing_comprehensive:
-      name: Test Coverage
-      description: Test coverage metrics available (e.g., .coverage file)
-      essential: false
-      professional: false
-      elite: true
-      aggregation: OR
-      based_on: file_content
     testing_framework:
       name: Test Framework Usage
       description: Evidence of test framework (pytest, unittest)

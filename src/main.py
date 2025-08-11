@@ -117,7 +117,7 @@ if __name__ == "__main__":
     from_inputs_directory = config["from_inputs_directory"]
 
     # Load AAIDC data
-    aaidc_file_path = os.path.join("data", "module-2-submissions.json")
+    aaidc_file_path = os.path.join("data", "M3.json")
     url_to_pub_id = load_aaidc_data(aaidc_file_path)
     
     if from_inputs_directory:

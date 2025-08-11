@@ -2,14 +2,11 @@
     "from_inputs_directory": false,
     "project_name": "my-first-ai-project",
     "urls": [
-    "https://github.com/kuxall/agentic-ai",
-    "https://github.com/daishir0/rag-document-assistant/",
-    "https://github.com/AmmarAhmedl200961/simple-rag",
-    "https://github.com/Blaqadonis/heritageai",
-    "https://github.com/JbellMD/RT-RAG",
-    "https://github.com/MANU-de/RAG-CHATBOT",
-    "https://github.com/Fatimat01/consumer-complaint-chatbot",
-    "https://github.com/stephanie0324/KnowBot"
+    "https://github.com/MANU-de/Cryptosentinator",
+    "https://github.com/okumujustine/AskImmigrate2.0",
+    "https://github.com/poacosta/literary-finder",
+    "https://github.com/archanags001/AI-Report-Generator",
+    "https://github.com/ezedinff/AAIDC"
 ],
     "max_workers": 30
 }

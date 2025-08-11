@@ -166,18 +166,3 @@ Documentation:
       essential: false
       professional: true
       elite: true
-    changelog_documented:
-      name: Change History
-      description: Repository includes changelog information either in README or in
-        a dedicated file (like CHANGELOG.md), documenting significant version changes.
-      essential: false
-      professional: false
-      elite: true
-    contact_info_provided:
-      name: Maintainer Contact Information
-      description: Clear contact information for maintainers
-      essential: false
-      professional: false
-      elite: true
-      instructions: |
-        The contact information should be provided in the README file. A presence of an email address is enough for passing the criterion.
